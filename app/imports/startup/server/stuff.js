@@ -6,8 +6,10 @@ import { Stuff } from '../../api/stuff/stuff.js';
  * @type {*[]}
  */
 const stuffSeeds = [
-  { name: 'Basket', quantity: 3 },
-  { name: 'Bicycle', quantity: 2 },
+  { first: 'Xinghui', last: 'Zhao', address: 'WSU Vancouver', phone: '360-546-9110', email: 'x.zhao@wsu.edu' },
+  { first: 'David', last: 'Chiu', address: 'WSU Vancouver', phone: '360-546-1234', email: 'david.chiu@wsu.edu' },
+  { first: 'Scott', last: 'Wallace', address: 'WSU Vancouver', phone: '360-546-9112', email: 'wallaces@wsu.edu' },
+  { first: 'Sarah', last: 'Mocas', address: 'WSU Vancouver', phone: '360-546-2456', email: 'sarah.mocas@wsu.edu' },
 ];
 
 /**

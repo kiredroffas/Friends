@@ -1,22 +1,31 @@
 <template name="List_Stuff_Page">
-  {{#If_Logged_In}}
     <div class="ui text container">
       {{#if Template.subscriptionsReady}}
         <table style="margin-top: 20px" class="ui celled table">
           <thead>
           <tr>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Edit</th>
+            <th>First</th>
+            <th>Last</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            {{#if currentUser}}
+              <th>Edit</th>
+            {{/if}}
           </tr>
           </thead>
 
           <tbody>
           {{#each stuff in stuffList}}
             <tr>
-              <td>{{stuff.name}}</td>
-              <td>{{stuff.quantity}}</td>
+              <td>{{stuff.first}}</td>
+              <td>{{stuff.last}}</td>
+              <td>{{stuff.address}}</td>
+              <td>{{stuff.phone}}</td>
+              <td>{{stuff.email}}</td>
+            {{#if currentUser}}
               <td><a href="{{pathFor 'Edit_Stuff_Page' _id=stuff._id}}">Edit</a></td>
+            {{/if}}
             </tr>
           {{/each}}
           </tbody>
@@ -25,5 +34,4 @@
         {{> Loading}}
       {{/if}}
     </div>
-  {{/If_Logged_In}}
 </template>
