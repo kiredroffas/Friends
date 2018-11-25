@@ -1,12 +1,36 @@
 <template name="Add_Stuff_Page">
   {{#If_Logged_In}}
-    <div style="padding-top: 20px" class="ui text container">
-      {{> quickForm
+    <div style="padding-top: 20px" class="ui container">
+      {{#autoForm
       collection=stuffCollection
       template="semanticUI"
       id="AddStuffForm"
       type="insert"
-      resetOnSuccess=true}}
+      resetOnSuccess=true
+      }}
+        <fieldset style="border-color: white">
+          <h4>Add Contact</h4>
+          <div class="ui divider"></div>
+          <div class="ui grid">
+            <div class="eight wide column">
+              {{> afQuickField name='first'}}
+            </div>
+            <div class="eight wide column">
+              {{> afQuickField name='last'}}
+            </div>
+            <div class="sixteen wide column">
+              {{> afQuickField name='address'}}
+            </div>
+            <div class="eight wide column">
+              {{> afQuickField name='phone'}}
+            </div>
+            <div class="eight wide column">
+              {{> afQuickField name='email'}}
+            </div>
+          </div>
+        </fieldset>
+        <button type="" class="ui button">Submit</button>
+      {{/autoForm}}
     </div>
   {{/If_Logged_In}}
 </template>
